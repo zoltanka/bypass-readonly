@@ -29,6 +29,10 @@ class BypassReadonly
 {
     protected const PROTOCOL = 'file';
 
+    protected const KEYWORDS = [
+        'readonly', 'final'
+    ];
+
     /**
      * @var resource|null
      */
@@ -114,7 +118,15 @@ class BypassReadonly
 
     public static function cachedRemoveReadonly(string $code): string
     {
-        if (stripos($code, 'readonly') === false) {
+        $found = false;
+        foreach (self::KEYWORDS as $keyword) {
+            if (stripos($code, $keyword)) {
+                $found = true;
+                break;
+            }
+        }
+
+        if ($found === false) {
             return $code;
         }
 
@@ -150,7 +162,7 @@ class BypassReadonly
         $code = '';
         foreach ($tokens as $token) {
             $code .= is_array($token)
-                ? ($token[0] === T_READONLY ? '' : $token[1])
+                ? (in_array($token[0], [T_FINAL, T_READONLY], true) ? '' : $token[1])
                 : $token;
         }
 

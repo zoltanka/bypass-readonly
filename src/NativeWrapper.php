@@ -2,10 +2,9 @@
 
 namespace Zfekete\BypassReadonly;
 
-
 class NativeWrapper
 {
-    private const PROTOCOL = 'file';
+    protected const PROTOCOL = 'file';
 
     public static ?string $outerWrapper = null;
 

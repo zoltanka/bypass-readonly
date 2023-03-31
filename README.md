@@ -1,6 +1,6 @@
 # bypass-readonly
 
-A PHP unit plugin to bypass readonly classes.
+A PHP unit plugin to bypass readonly and final classes.
 
 Inspired / copied / adjusted from: https://github.com/dg/bypass-finals 
-Which is also an amazing tool btw.
+Which is an amazing tool btw.
