@@ -1,0 +1,19 @@
+{
+    "name": "zfekete/bypass-readonly",
+    "version": "0.0.1",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Zfekete\\BypassReadonly\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Z.Fekete",
+            "email": "fekzol.13ker@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=8.2"
+    }
+}
